@@ -104,10 +104,14 @@ function game(playerSelection){
     if(playercount === 5)
     {
         final.innerHTML = "You have beaten the computer";
+        document.body.style.backgroundColor = "Yellow";
+        window.location.href = "Player.html";
     }
     else if(computercount === 5)
     {
         final.innerHTML = "The computer has beaten you.."
+        document.body.style.backgroundColor = "Red";
+        window.location.href = "Computer.html";
     }
     return ;
 }
