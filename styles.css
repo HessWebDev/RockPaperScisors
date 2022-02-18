@@ -76,3 +76,23 @@ img{
 .resetButton{
     text-decoration: none;
 }
+
+Button :hover{
+
+    opacity: 80%;
+}
+
+#Rock :hover{
+
+    opacity: 50%;
+}
+
+#Paper :hover{
+
+    opacity: 50%;
+}
+
+#Scissors :hover{
+
+    opacity: 50%;
+}
