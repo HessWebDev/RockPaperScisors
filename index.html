@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="RockPaperScisor.js"></script>
+    <script defer type="text/javascript" src="RockPaperScisor.js"></script>
     <link rel ="stylesheet" href="styles.css">
     <title>Document</title>
     <style>
@@ -16,17 +16,19 @@
     </style>
 </head>
 <body>
-    <H1>Do You Have What It Takes To Beat The Computer In Rock Paper Scissors</H1>
-    <H2>Chose your weapon</H2>
+    <div class = "text_line"><H1 id ="Header"></H1><div id = "Currsor"></div></div>
+    <div class = "choices">
+        <button id = "Yes">Yes</button>
+        <button id = "No">No</button>
+    </div>
     <div class="container">
-        <button id="Rock"> Rock</button>
-        <button id="Paper"> Paper</button>
-        <button id="Scisors"> Scisors</button>
+        <a id = "Rock"><img src="istockphoto-1288973456-170667a.jpeg"></a>
+        <a id = "Paper"><img src="1-04851-00_BL_Notebook_Paper_Punch_G-600x735.jpeg"></a>
+        <a id = "Scissors"><img src="104994_m.jpeg"></a>
     </div>
     <div class = "text">
-        <div id="Results"></div>
-        <div id="Winner"></div>
-        <div id="Final"></div>
+        <h2>Your Score: <div id="PlayerScore"></div></h2>
+        <h2>Computer Score:<div id="ComputerScore"></div></h2>
     </div>
 </body>
 </html>

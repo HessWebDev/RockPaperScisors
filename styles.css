@@ -1,5 +1,5 @@
 body{
-    background-color: goldenrod; 
+    background-color: grey; 
 }
 
 .container{
@@ -13,7 +13,63 @@ body{
 }
 h1{
     text-align: center;
+    font-style: italic;
+    font-size: 60px;
+    text-align: center;
+    display: inline-block;
+    text-shadow: 2px 2px whitesmoke;
 }
 h2{
     text-align: center;
+}
+
+#Currsor{
+    display: inline-block;
+	vertical-align: middle;
+	width: 3px;
+	height: 50px;
+	background-color: black;
+	animation: blink .75s step-end infinite;
+}
+
+@keyframes blink {
+	from, to { 
+		background-color: transparent 
+	}
+	50% { 
+		background-color: black; 
+	}
+}
+
+.text_line{
+
+    text-align: center;
+}
+
+.choices{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+button{
+    width: 150px;
+    height: 40px;
+    transition: opacity 2000ms ease-in, visibility 0ms ease-in 2000ms;
+}
+
+img{
+    width: 200px;
+    height: 200px;
+}
+
+a{
+    display: block;
+}
+
+#reset{
+    width: 300px;
+    height: 100px;
+    font-size: xx-large;
 }

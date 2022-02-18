@@ -1,17 +1,8 @@
+window.onload=function(){
 
     const buttonRock = document.getElementById('Rock');
     const buttonPaper = document.getElementById('Paper');
-    const buttonScisors =  document.getElementById('Scissors');
-    const buttonYes = document.getElementById("Yes");
-    const buttonNo = document.getElementById("No");
-
-    buttonRock.hidden = true;
-    buttonPaper.hidden = true;
-    buttonScisors.hidden = true;
-    buttonYes.hidden = true;
-    buttonNo.hidden = true;
-
-
+    const buttonScisors =  document.getElementById('Scisors');
 
     buttonRock.addEventListener('click', function(){
         game("rock");
@@ -22,67 +13,44 @@
     buttonScisors.addEventListener('click', function(){
         game("scissors");
     });
-    buttonYes.addEventListener('click', () =>{
-        buttonYes.hidden = true;
-        buttonNo.hidden = true;
-        typeEraser(header_text,"Header", 50);
-    })
-    
-    buttonNo.addEventListener('click', () =>{
-        document.hidden = true;
-    })
     let i = 0;
-    
+    let typeWriterDone = false;
     const header_text = "Do You Have What It Takes To Beat The Computer In Rock Paper Scissors...?";
-    let j = header_text.length;
     const header2_text = "Choose Your Weapon";
-
     function typeWriter(text, id, delay){
+
         if(i < text.length){
-            document.getElementById(id).innerHTML += text.charAt(i)
+            document.getElementById(id).innerHTML += header_text.charAt(i)
             i++;
             setTimeout( () =>{
-                typeWriter(text, "Header", 50);
+                typeWriter(header_text, "Header", 50);
             }, delay)
-        }else if(i === text.length && text === header_text){
-
-            buttonYes.hidden = false;
-            buttonNo.hidden = false;
         }
 
-
-        
+        if (i===text.length)
+        {
+            typeWriterDone = true;
+        }
     }
 
     function typeEraser(text, id, delay){
-        buttonNo.hidden = true;
-        buttonYes.hidden = true;
-        if(j>0){
-            document.getElementById(id).innerHTML = text.substring(0, j-1);
-            j--;
+
+        if(i < text.length){
+            document.getElementById(id).innerHTML -= header_text.charAt(text.length - i)
+            i++;
             setTimeout( () =>{
                 typeEraser(header_text, "Header", 50);
             }, delay)
-            
-        }else if(j === 0){
-            console.log("Helo");
-            buttonRock.hidden = false;
-            buttonPaper.hidden = false;
-            buttonScisors.hidden = false;
-            i = 0;
-            typeWriter(header2_text, "Header", 50);
-
         }
 
-        
-        }
-        
+    }
 
     
-
+    typeWriter(header_text, "Header", 100);
     
-        typeWriter(header_text, "Header", 100);
     
+    
+}
 
 
 
@@ -141,8 +109,7 @@ let computercount = 0;
 function game(playerSelection){
     let winner;
     let match;
-    const playerScore = document.getElementById("PlayerScore");
-    const computerScore = document.getElementById("ComputerScore");
+    const results = document.getElementById("Results");
     const winnerDiv = document.getElementById("Winner");
     const final = document.getElementById("Final");
     match = rockPaperScissors(playerSelection, computerPlay());
@@ -155,7 +122,7 @@ function game(playerSelection){
 
     console.log(playercount);
     console.log(computercount);
-    /*if(playercount > computercount)
+    if(playercount > computercount)
     {
         winnerDiv.innerHTML = "You Won!";
     }
@@ -166,20 +133,19 @@ function game(playerSelection){
     else
     {
         winnerDiv.innerHTML = "You Tied The Computer";
-    }*/
+    }
    
-    playerScore.innerHTML = `${playercount}`;
-    computerScore.innerHTML = `${computercount}`;
+    results.innerHTML = `You have ${playercount} points while the computer has ${computercount}`; 
 
     if(playercount === 5)
     {
-        //final.innerHTML = "You have beaten the computer";
+        final.innerHTML = "You have beaten the computer";
         document.body.style.backgroundColor = "Yellow";
         window.location.href = "Player.html";
     }
     else if(computercount === 5)
     {
-        //final.innerHTML = "The computer has beaten you.."
+        final.innerHTML = "The computer has beaten you.."
         document.body.style.backgroundColor = "Red";
         window.location.href = "Computer.html";
     }
