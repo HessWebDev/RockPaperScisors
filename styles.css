@@ -96,3 +96,53 @@ Button :hover{
 
     opacity: 50%;
 }
+
+@media only screen and (max-width: 600px){
+
+    h1{
+        text-align: center;
+        font-style: italic;
+        font-size: 30px;
+        text-align: center;
+        display: inline-block;
+        text-shadow: 2px 2px whitesmoke;
+    }
+
+    #Currsor{
+        display: inline-block;
+        vertical-align: middle;
+        width: 2px;
+        height: 30px;
+        background-color: black;
+        animation: blink .75s step-end infinite;
+    }
+
+    .choices{
+        display: flex;
+        justify-content: space-between;
+        margin-left: 20px;
+        margin-right: 20px;
+       
+    }
+
+    .container{
+        display: flex;
+        justify-content: space-between;
+        margin: 20px;
+    }
+
+    img{
+        width: 100px;
+        height: 100px;
+    }
+
+    .text{
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    h2{
+        background-color: whitesmoke;
+    }
+
+}

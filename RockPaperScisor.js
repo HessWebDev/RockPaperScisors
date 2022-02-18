@@ -4,12 +4,18 @@
     const buttonScisors =  document.getElementById('Scissors');
     const buttonYes = document.getElementById("Yes");
     const buttonNo = document.getElementById("No");
+    const PlayerScoreboard = document.getElementById("Score");
+    const ComputerScoreboard = document.getElementById("Score2");
+    
+
 
     buttonRock.hidden = true;
     buttonPaper.hidden = true;
     buttonScisors.hidden = true;
     buttonYes.hidden = true;
     buttonNo.hidden = true;
+    PlayerScoreboard.hidden = true;
+    ComputerScoreboard.hidden = true;
 
 
 
@@ -69,6 +75,10 @@
             buttonRock.hidden = false;
             buttonPaper.hidden = false;
             buttonScisors.hidden = false;
+            PlayerScoreboard.hidden = false;
+            ComputerScoreboard.hidden = false;
+            
+
             i = 0;
             typeWriter(header2_text, "Header", 50);
 
